@@ -1,5 +1,13 @@
-function App() {
-  return <div>Hello, World!</div>;
-}
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
-export default App;
+export const App: React.FC = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<div />} />
+        <Route path="/" element={<div />} />
+        <Route path="/" element={<div />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
