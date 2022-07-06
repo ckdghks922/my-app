@@ -14,6 +14,7 @@ export const App: React.FC = () => {
           <Route path="*" element={<div>Wrong Path</div>} />
         </Routes>
       </S.Content>
+      <Compt.Footer />
     </BrowserRouter>
   );
 };
