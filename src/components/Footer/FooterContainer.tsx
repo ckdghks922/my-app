@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FriendView, ChatView, SettingView } from './FooterView';
+import { ROUTE_URL } from '../../configs';
+import { IconView } from './FooterView';
 import * as S from './styled';
 
 export const FooterContainer: React.FC = () => {
@@ -10,11 +11,22 @@ export const FooterContainer: React.FC = () => {
     navigate(url);
   }, []);
 
+  const NAV_LIST = [
+    { name: ROUTE_URL.FRIENDS, count: 1 },
+    { name: ROUTE_URL.CHAT, count: 1 },
+    { name: ROUTE_URL.SETTING, count: 0 },
+  ];
+
   return (
     <S.Wrapper>
-      <FriendView count={0} onClick={handleRoute} />
-      <ChatView count={0} onClick={handleRoute} />
-      <SettingView onClick={handleRoute} />
+      {NAV_LIST.map(elem => (
+        <IconView
+          key={elem.name}
+          name={elem.name}
+          count={elem.count}
+          onClick={handleRoute}
+        />
+      ))}
     </S.Wrapper>
   );
 };
