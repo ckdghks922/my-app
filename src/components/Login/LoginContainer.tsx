@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TextView, InputView, EnterButtonView } from './LoginView';
+import { ROUTE_URL } from '../../configs';
 import * as S from './styled';
 
 export const LoginContainer: React.FC = () => {
@@ -14,7 +15,7 @@ export const LoginContainer: React.FC = () => {
     [],
   );
   const handleEnter = useCallback((): void => {
-    navigate('friends');
+    navigate(ROUTE_URL.FRIENDS);
   }, []);
 
   return (
