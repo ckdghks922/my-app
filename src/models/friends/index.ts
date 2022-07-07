@@ -1,0 +1,1 @@
+export { friendsModel } from './friendsModel';
