@@ -6,12 +6,8 @@ export const HeaderView: React.FC = () => {
   return (
     <S.Wrapper>
       <S.Text>Chat Example</S.Text>
-      <S.IconButton>
-        <FontAwesomeIcon icon={faPlus} />
-      </S.IconButton>
-      <S.IconButton>
-        <FontAwesomeIcon icon={faMagnifyingGlass} />
-      </S.IconButton>
+      <FontAwesomeIcon icon={faPlus} />
+      <FontAwesomeIcon icon={faMagnifyingGlass} />
     </S.Wrapper>
   );
 };

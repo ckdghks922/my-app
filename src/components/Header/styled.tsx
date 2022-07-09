@@ -1,4 +1,3 @@
-import { CButton } from '../../utils';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -13,16 +12,10 @@ export const Wrapper = styled.div`
   & svg {
     width: 20px;
     height: 20px;
+    margin-left: 20px;
   }
 `;
 
 export const Text = styled.span`
   margin-right: auto;
-`;
-
-export const IconButton = styled.button`
-  ${CButton}
-  width: 30px;
-  height: 30px;
-  margin-left: 10px;
 `;

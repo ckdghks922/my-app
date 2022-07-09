@@ -17,6 +17,9 @@ export const Menu = styled.div``;
 export const IconButton = styled.button`
   ${CButton}
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   width: 100px;
   height: 50px;
