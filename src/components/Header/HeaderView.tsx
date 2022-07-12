@@ -5,7 +5,7 @@ import * as S from './styled';
 export const HeaderView: React.FC = () => {
   return (
     <S.Wrapper>
-      <S.Text>Chat Example</S.Text>
+      <S.Text>Welcome to Chat</S.Text>
       <S.IconButton>
         <FontAwesomeIcon icon={faPlus} />
       </S.IconButton>
