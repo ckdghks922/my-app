@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Canvas = styled.canvas`
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   border: 1px solid black;
 `;

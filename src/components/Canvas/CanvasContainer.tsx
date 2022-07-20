@@ -1,36 +1,49 @@
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import * as S from './styled';
+
+let isDrawing = false;
 
 export const CanvasContainer: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [ctx, setCtx] = useState<CanvasRenderingContext2D | null | undefined>(
+    undefined,
+  );
+
+  const handleMove = (event: React.MouseEvent) => {
+    const { offsetX, offsetY } = event.nativeEvent;
+    if (isDrawing) {
+      ctx?.lineTo(offsetX, offsetY);
+      ctx?.stroke();
+      return;
+    }
+    ctx?.moveTo(offsetX, offsetY);
+  };
+
+  const handleDown = () => {
+    isDrawing = true;
+  };
+  const handleUp = () => {
+    isDrawing = false;
+  };
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (canvas) {
-      canvas.width = 500;
-      canvas.height = 500;
+      canvas.width = 600;
+      canvas.height = 600;
     }
-
     const ctx = canvas?.getContext('2d');
-    if (ctx) {
-      ctx.fillRect(50, 100, 50, 100);
-      ctx.fillRect(200, 100, 50, 100);
-      ctx.fillRect(125, 150, 50, 50);
-
-      ctx.moveTo(50, 100);
-      ctx.lineTo(150, 50);
-      ctx.lineTo(250, 100);
-      ctx.fill();
-
-      ctx.beginPath();
-      ctx.arc(300, 300, 50, 0, 2 * Math.PI);
-      ctx.fill();
-    }
+    setCtx(ctx);
   }, []);
 
   return (
     <S.Wrapper>
-      <S.Canvas ref={canvasRef} />
+      <S.Canvas
+        ref={canvasRef}
+        onMouseMove={handleMove}
+        onMouseDown={handleDown}
+        onMouseUp={handleUp}
+      />
     </S.Wrapper>
   );
 };
