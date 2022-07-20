@@ -1,10 +1,10 @@
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ROUTE_URL } from '../../configs';
-import { IconView } from './FooterView';
+import { IconView } from './LeftSideView';
 import * as S from './styled';
 
-export const FooterContainer: React.FC = () => {
+export const LeftSideContainer: React.FC = () => {
   const navigate = useNavigate();
 
   const handleRoute = useCallback((url: string): void => {
@@ -14,7 +14,7 @@ export const FooterContainer: React.FC = () => {
   const NAV_LIST = [
     { name: ROUTE_URL.FRIENDS, count: 1 },
     { name: ROUTE_URL.CHAT, count: 1 },
-    { name: ROUTE_URL.SETTING, count: 0 },
+    { name: ROUTE_URL.DRAWING, count: 0 },
   ];
 
   return (

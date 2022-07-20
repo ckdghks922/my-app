@@ -1,4 +1,5 @@
 export * from './Canvas';
-export * from './Footer';
+export * from './Friends';
 export * from './Header';
+export * from './LeftSide';
 export * from './Login';

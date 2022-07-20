@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faUserLarge,
   faMessage,
-  faGear,
+  faPencil,
 } from '@fortawesome/free-solid-svg-icons';
 import * as S from './styled';
 
@@ -17,7 +17,7 @@ const Icon: React.FC<IconProps> = ({ name, onClick, count }) => {
   let icon;
   if (name === ROUTE_URL.FRIENDS) icon = faUserLarge;
   else if (name === ROUTE_URL.CHAT) icon = faMessage;
-  else icon = faGear;
+  else icon = faPencil;
 
   return (
     <S.Menu>

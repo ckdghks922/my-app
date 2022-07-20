@@ -2,14 +2,12 @@ import { CButton } from '../../utils';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  position: fixed;
-  bottom: 0px;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
-  height: 50px;
-  width: 100%;
-  border-top: 1px solid black;
+  width: 60px;
+  height: 100%;
+  border-right: 1px solid black;
 `;
 
 export const Menu = styled.div``;
@@ -17,9 +15,10 @@ export const Menu = styled.div``;
 export const IconButton = styled.button`
   ${CButton}
   position: relative;
+  margin-top: 15px;
   padding: 0;
-  width: 100px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 
   & svg {
     width: 20px;
@@ -30,7 +29,7 @@ export const IconButton = styled.button`
 export const Badge = styled.div`
   position: absolute;
   top: 6px;
-  right: 30px;
+  right: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
