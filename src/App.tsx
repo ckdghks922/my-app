@@ -1,7 +1,7 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import { PAGE_URL } from './configs';
-import { MainPage } from './pages';
-import * as Compt from './components';
+import { PAGE_URL } from '@/configs';
+import { MainPage } from '@/pages';
+import * as Compt from '@/components';
 
 export const App: React.FC = () => {
   return (
