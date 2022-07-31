@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 60px;
   height: 100%;
-  border-right: 1px solid black;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
 `;
 
 export const Menu = styled.div``;

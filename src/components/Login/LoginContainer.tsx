@@ -14,10 +14,10 @@ export const LoginContainer: React.FC = () => {
     },
     [],
   );
-  const handleEnter = useCallback((): void => {
+  const handleEnter = (): void => {
     if (!name) return;
     navigate(ROUTE_URL.FRIENDS);
-  }, []);
+  };
 
   return (
     <S.Wrapper>

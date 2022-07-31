@@ -18,6 +18,17 @@ export const Input = styled.input`
   margin-top: 30px;
   width: 250px;
   height: 30px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+
+  ::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid blue;
+  }
 `;
 
 export const Button = styled.button`
@@ -25,9 +36,10 @@ export const Button = styled.button`
   width: 150px;
   height: 50px;
   border: none;
-  cursor: pointer;
+  border-radius: 5px;
   background-color: black;
   color: white;
+  cursor: pointer;
 
   &:hover {
     background-color: gray;

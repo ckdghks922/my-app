@@ -10,14 +10,15 @@ import * as S from './styled';
 
 interface IconProps {
   name: string;
+  match: boolean;
   onClick: (url: string) => void;
   count?: number;
 }
-const Icon: React.FC<IconProps> = ({ name, onClick, count }) => {
+const Icon: React.FC<IconProps> = ({ name, match, onClick, count }) => {
   let icon;
-  if (name === ROUTE_URL.FRIENDS) icon = faUserLarge;
-  else if (name === ROUTE_URL.CHAT) icon = faMessage;
-  else icon = faPencil;
+  if (name === ROUTE_URL.FRIENDS) icon = match ? faUserLarge : faUserLarge;
+  else if (name === ROUTE_URL.CHAT) icon = match ? faMessage : faMessage;
+  else icon = match ? faPencil : faPencil;
 
   return (
     <S.Menu>

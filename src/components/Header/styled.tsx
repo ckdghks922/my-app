@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   width: calc(100% - 60px);
   height: 50px;
   padding: 0 30px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
   & svg {
     width: 20px;
