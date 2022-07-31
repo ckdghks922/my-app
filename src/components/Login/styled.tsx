@@ -11,7 +11,7 @@ export const WelcomeText = styled.h1`
 `;
 
 export const SubText = styled.span`
-  margin-top: 30px;
+  margin-top: 50px;
 `;
 
 export const Input = styled.input`

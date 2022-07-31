@@ -5,7 +5,7 @@ const Text: React.FC = () => {
   return (
     <>
       <S.WelcomeText>Welcome!</S.WelcomeText>
-      <S.SubText>채팅에서 사용할 이름을 입력해 주세요.</S.SubText>
+      <S.SubText>사용할 이름을 입력해 주세요.</S.SubText>
     </>
   );
 };
