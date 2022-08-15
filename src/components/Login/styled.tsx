@@ -3,15 +3,27 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+`;
+
+export const WelcomeWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   align-items: center;
 `;
 
-export const WelcomeText = styled.h1`
-  margin-top: 50px;
+export const WelcomeText = styled.span`
+  font-size: 30px;
+  font-weight: 700;
 `;
 
 export const SubText = styled.span`
-  margin-top: 50px;
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 500;
 `;
 
 export const Input = styled.input`
@@ -29,6 +41,29 @@ export const Input = styled.input`
     outline: none;
     border-bottom: 1px solid blue;
   }
+`;
+
+export const InfoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+`;
+
+export const InfoCircle = styled.div`
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+`;
+
+export const InfoText = styled.span`
+  margin-left: 10px;
+  font-size: 12px;
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 export const Button = styled.button`
