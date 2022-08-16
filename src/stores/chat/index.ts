@@ -1,1 +1,1 @@
-export { chatStoreImpl as chatStore } from './chatStore';
+export { chatStoreImpl } from './chatStore';
