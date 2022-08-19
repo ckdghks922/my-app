@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { ROUTE_URL } from '../../configs';
+import { ROUTE_URL } from '@/configs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faUserLarge,

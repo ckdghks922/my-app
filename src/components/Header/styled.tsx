@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
 export const Text = styled.span`
   margin-right: auto;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 17px;
 `;
 
 export const IconButton = styled.div`

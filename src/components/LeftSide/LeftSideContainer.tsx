@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useNavigate, useResolvedPath, useMatch } from 'react-router-dom';
-import { ROUTE_URL } from '../../configs';
+import { ROUTE_URL } from '@/configs';
 import { IconView } from './LeftSideView';
 import * as S from './styled';
 
