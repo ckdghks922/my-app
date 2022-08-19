@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '@/stores';
 import { ROUTE_URL } from '@/configs';
-import { TextView, InputView, EnterButtonView } from './LoginView';
+import { TextView, InputView } from './LoginView';
 import * as S from './styled';
 
 export const LoginContainer: React.FC = () => {
@@ -26,8 +26,11 @@ export const LoginContainer: React.FC = () => {
   return (
     <S.Wrapper>
       <TextView />
-      <InputView name={name} onChange={handleChangeName} />
-      <EnterButtonView onEnter={handleEnter} />
+      <InputView
+        name={name}
+        onChange={handleChangeName}
+        onEnter={handleEnter}
+      />
     </S.Wrapper>
   );
 };

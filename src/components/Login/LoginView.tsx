@@ -14,14 +14,22 @@ export const TextView = memo(Text);
 interface InputProps {
   name: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onEnter: () => void;
 }
-export const InputView: React.FC<InputProps> = ({ name, onChange }) => {
+export const InputView: React.FC<InputProps> = ({
+  name,
+  onChange,
+  onEnter,
+}) => {
   return (
     <>
       <S.Input
         value={name}
-        onChange={onChange}
         placeholder="이름을 입력하세요"
+        onChange={onChange}
+        onKeyDown={event => {
+          if (event.key === 'Enter') onEnter();
+        }}
       />
       <S.InfoWrapper>
         <S.InfoCircle valid={!!name} />
@@ -31,18 +39,9 @@ export const InputView: React.FC<InputProps> = ({ name, onChange }) => {
             : '한 글자 이상의 이름이 필요합니다.'}
         </S.InfoText>
       </S.InfoWrapper>
+      <S.ButtonWrapper>
+        <S.Button onClick={onEnter}>시작</S.Button>
+      </S.ButtonWrapper>
     </>
   );
 };
-
-interface EnterProps {
-  onEnter: () => void;
-}
-const EnterButton: React.FC<EnterProps> = ({ onEnter }) => {
-  return (
-    <S.ButtonWrapper>
-      <S.Button onClick={onEnter}>시작</S.Button>
-    </S.ButtonWrapper>
-  );
-};
-export const EnterButtonView = memo(EnterButton);

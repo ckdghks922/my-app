@@ -15,7 +15,7 @@ export const WelcomeWrapper = styled.div`
   align-items: center;
 `;
 
-export const WelcomeText = styled.span`
+export const WelcomeText = styled.h1`
   font-size: 30px;
   font-weight: 700;
 `;
@@ -34,11 +34,10 @@ export const Input = styled.input`
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 
   ::placeholder {
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.5);
   }
 
   &:focus {
-    outline: none;
     border-bottom: 1px solid blue;
   }
 `;
