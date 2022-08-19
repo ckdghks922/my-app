@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  max-width: 240px;
+  max-width: 300px;
   margin: 0 auto;
 `;
 
@@ -28,7 +28,7 @@ export const SubText = styled.span`
 
 export const Input = styled.input`
   margin-top: 30px;
-  width: 250px;
+  width: 300px;
   height: 30px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
@@ -49,11 +49,11 @@ export const InfoWrapper = styled.div`
   margin-top: 10px;
 `;
 
-export const InfoCircle = styled.div`
+export const InfoCircle = styled.div<{ valid: boolean }>`
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: red;
+  background-color: ${props => (props.valid ? 'green' : 'red')};
 `;
 
 export const InfoText = styled.span`

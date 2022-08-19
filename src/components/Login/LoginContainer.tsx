@@ -1,8 +1,8 @@
 import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '@/stores';
-import { TextView, InputView, EnterButtonView } from './LoginView';
 import { ROUTE_URL } from '@/configs';
+import { TextView, InputView, EnterButtonView } from './LoginView';
 import * as S from './styled';
 
 export const LoginContainer: React.FC = () => {

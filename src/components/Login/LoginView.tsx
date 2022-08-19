@@ -23,12 +23,14 @@ export const InputView: React.FC<InputProps> = ({ name, onChange }) => {
         onChange={onChange}
         placeholder="이름을 입력하세요"
       />
-      {!name && (
-        <S.InfoWrapper>
-          <S.InfoCircle />
-          <S.InfoText>한 글자 이상의 이름 필요</S.InfoText>
-        </S.InfoWrapper>
-      )}
+      <S.InfoWrapper>
+        <S.InfoCircle valid={!!name} />
+        <S.InfoText>
+          {name
+            ? '사용 가능한 이름입니다.'
+            : '한 글자 이상의 이름이 필요합니다.'}
+        </S.InfoText>
+      </S.InfoWrapper>
     </>
   );
 };
