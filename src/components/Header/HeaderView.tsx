@@ -1,20 +1,25 @@
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faPlus, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { memo } from 'react';
 import * as S from './styled';
 
-interface Props {
+interface TextProps {
   name: string;
 }
-export const HeaderView: React.FC<Props> = ({ name }) => {
+const HeaderText: React.FC<TextProps> = ({ name }) => {
+  return <S.Text>{name}님, 좋은 하루 보내세요!</S.Text>;
+};
+export const HeaderTextView = memo(HeaderText);
+
+interface TimeProps {
+  time: {
+    hours: string;
+    minutes: string;
+    seconds: string;
+  };
+}
+export const TimeTextView: React.FC<TimeProps> = ({ time }) => {
   return (
-    <S.Wrapper>
-      <S.Text>{name}님, 좋은 하루 보내세요!</S.Text>
-      {/* <S.IconButton>
-        <FontAwesomeIcon icon={faPlus} />
-      </S.IconButton>
-      <S.IconButton>
-        <FontAwesomeIcon icon={faMagnifyingGlass} />
-      </S.IconButton> */}
-    </S.Wrapper>
+    <S.Time>
+      현재 시각: {time.hours}:{time.minutes}:{time.seconds}
+    </S.Time>
   );
 };

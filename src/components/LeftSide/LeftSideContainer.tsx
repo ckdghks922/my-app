@@ -12,26 +12,28 @@ export const LeftSideContainer: React.FC = () => {
   }, []);
 
   const NAV_LIST = [
-    { name: ROUTE_URL.TODO, count: 0 },
+    { name: ROUTE_URL.TODO, count: 1 },
     { name: ROUTE_URL.DRAWING, count: 0 },
   ];
 
   return (
     <S.Wrapper>
-      {NAV_LIST.map(elem => {
-        const resolved = useResolvedPath(elem.name);
-        const match = !!useMatch({ path: resolved.pathname, end: false });
+      <S.Menu>
+        {NAV_LIST.map(elem => {
+          const resolved = useResolvedPath(elem.name);
+          const match = !!useMatch({ path: resolved.pathname, end: false });
 
-        return (
-          <IconView
-            key={elem.name}
-            name={elem.name}
-            match={match}
-            count={elem.count}
-            onClick={handleRoute}
-          />
-        );
-      })}
+          return (
+            <IconView
+              key={elem.name}
+              name={elem.name}
+              match={match}
+              count={elem.count}
+              onClick={handleRoute}
+            />
+          );
+        })}
+      </S.Menu>
     </S.Wrapper>
   );
 };

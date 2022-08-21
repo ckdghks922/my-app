@@ -10,12 +10,15 @@ export const Wrapper = styled.nav`
   border-right: 1px solid rgba(0, 0, 0, 0.2);
 `;
 
-export const Menu = styled.div``;
+export const Menu = styled.ul``;
+
+export const MenuList = styled.li`
+  margin-top: 15px;
+`;
 
 export const IconButton = styled.button`
   ${CButton}
   position: relative;
-  margin-top: 15px;
   padding: 0;
   width: 40px;
   height: 40px;

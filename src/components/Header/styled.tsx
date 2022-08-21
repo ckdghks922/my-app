@@ -1,4 +1,3 @@
-import { CButton } from '../../utils';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -22,9 +21,6 @@ export const Text = styled.span`
   font-size: 17px;
 `;
 
-export const IconButton = styled.div`
-  ${CButton}
-  width: 30px;
-  height: 30px;
-  margin-left: 10px;
+export const Time = styled.span`
+  margin-left: auto;
 `;
