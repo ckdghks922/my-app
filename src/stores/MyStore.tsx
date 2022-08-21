@@ -1,8 +1,10 @@
 import { createContext, useContext } from 'react';
-import { profileStoreImpl } from './profile';
+import { ProfileStoreImpl } from './profile';
+import { TodoStoreImpl } from './todo';
 
 export class MyStore {
-  profileStore = profileStoreImpl;
+  profileStore = ProfileStoreImpl;
+  todoStore = TodoStoreImpl;
 }
 
 const MyStoreInstance = new MyStore();

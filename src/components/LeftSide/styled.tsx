@@ -8,6 +8,10 @@ export const Wrapper = styled.nav`
   width: 60px;
   height: 100%;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
+
+  @media all and (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const Menu = styled.ul``;

@@ -4,7 +4,7 @@ interface UserProps {
   name: string;
   message: string;
 }
-export class profileStore {
+export class ProfileStore {
   private _myProfile: UserProps = {
     name: '',
     message: '',
@@ -24,4 +24,4 @@ export class profileStore {
   }
 }
 
-export const profileStoreImpl = new profileStore();
+export const ProfileStoreImpl = new ProfileStore();

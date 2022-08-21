@@ -1,18 +1,21 @@
 import { useCallback } from 'react';
 import { useNavigate, useResolvedPath, useMatch } from 'react-router-dom';
+import { observer } from 'mobx-react';
+import { useStore } from '@/stores';
 import { ROUTE_URL } from '@/configs';
 import { IconView } from './LeftSideView';
 import * as S from './styled';
 
-export const LeftSideContainer: React.FC = () => {
+export const LeftSideContainer: React.FC = observer(() => {
   const navigate = useNavigate();
+  const { todoStore } = useStore();
 
   const handleRoute = useCallback((url: string): void => {
     navigate(url);
   }, []);
 
   const NAV_LIST = [
-    { name: ROUTE_URL.TODO, count: 1 },
+    { name: ROUTE_URL.TODO, count: todoStore.todoList.length },
     { name: ROUTE_URL.DRAWING, count: 0 },
   ];
 
@@ -36,4 +39,4 @@ export const LeftSideContainer: React.FC = () => {
       </S.Menu>
     </S.Wrapper>
   );
-};
+});

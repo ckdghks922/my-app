@@ -1,1 +1,1 @@
-export { profileStoreImpl } from './store';
+export { ProfileStoreImpl } from './store';
