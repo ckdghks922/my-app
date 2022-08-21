@@ -1,3 +1,2 @@
-export * from './chat';
-export * from './friends';
+export * from './profile';
 export * from './MyStore';

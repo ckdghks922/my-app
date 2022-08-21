@@ -3,7 +3,7 @@ import { HeaderView } from './HeaderView';
 
 export const HeaderContainer: React.FC = () => {
   const {
-    friendsStore: { myProfile },
+    profileStore: { myProfile },
   } = useStore();
 
   return <HeaderView name={myProfile.name} />;

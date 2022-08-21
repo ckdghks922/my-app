@@ -1,10 +1,8 @@
 import { createContext, useContext } from 'react';
-import { chatStoreImpl } from './chat';
-import { friendsStoreImpl } from './friends';
+import { profileStoreImpl } from './profile';
 
 export class MyStore {
-  chatStore = chatStoreImpl;
-  friendsStore = friendsStoreImpl;
+  profileStore = profileStoreImpl;
 }
 
 const MyStoreInstance = new MyStore();

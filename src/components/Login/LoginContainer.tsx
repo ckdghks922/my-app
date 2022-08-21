@@ -7,7 +7,7 @@ import * as S from './styled';
 
 export const LoginContainer: React.FC = () => {
   const navigate = useNavigate();
-  const { friendsStore } = useStore();
+  const { profileStore } = useStore();
   const [name, setName] = useState<string>('');
 
   const handleChangeName = useCallback(
@@ -19,8 +19,8 @@ export const LoginContainer: React.FC = () => {
   const handleEnter = (): void => {
     if (!name) return;
 
-    friendsStore.setMyProfile(name);
-    navigate(ROUTE_URL.FRIENDS);
+    profileStore.setMyProfile(name);
+    navigate(ROUTE_URL.TODO);
   };
 
   return (

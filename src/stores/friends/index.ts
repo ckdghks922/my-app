@@ -1,1 +1,0 @@
-export { friendsStoreImpl } from './friendsStore';

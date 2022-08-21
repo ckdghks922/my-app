@@ -12,8 +12,7 @@ export const LeftSideContainer: React.FC = () => {
   }, []);
 
   const NAV_LIST = [
-    { name: ROUTE_URL.FRIENDS, count: 0 },
-    { name: ROUTE_URL.CHAT, count: 0 },
+    { name: ROUTE_URL.TODO, count: 0 },
     { name: ROUTE_URL.DRAWING, count: 0 },
   ];
 

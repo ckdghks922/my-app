@@ -1,1 +1,0 @@
-export { friendsModel } from './friendsModel';

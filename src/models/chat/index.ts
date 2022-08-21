@@ -1,1 +1,0 @@
-export { chatModel } from './chatModel';

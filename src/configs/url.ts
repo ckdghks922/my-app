@@ -1,13 +1,11 @@
 export const ROUTE_URL = {
   WELCOME: '/',
-  FRIENDS: 'friends',
-  CHAT: 'chat',
+  TODO: '/todo',
   DRAWING: 'drawing',
 };
 
 export const PAGE_URL = {
   WELCOME: '/',
-  FRIENDS: `/${ROUTE_URL.FRIENDS}`,
-  CHAT: `/${ROUTE_URL.CHAT}`,
+  TODO: `/${ROUTE_URL.TODO}`,
   DRAWING: `/${ROUTE_URL.DRAWING}`,
 };

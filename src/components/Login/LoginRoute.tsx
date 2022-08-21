@@ -9,7 +9,7 @@ interface Props {
 export const LoginRoute: React.FC<Props> = ({ children }) => {
   const navigate = useNavigate();
   const {
-    friendsStore: { myProfile },
+    profileStore: { myProfile },
   } = useStore();
 
   useEffect(() => {
