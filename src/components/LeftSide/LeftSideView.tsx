@@ -1,11 +1,7 @@
 import { memo } from 'react';
 import { ROUTE_URL } from '@/configs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faUserLarge,
-  faMessage,
-  faPencil,
-} from '@fortawesome/free-solid-svg-icons';
+import { faPencil } from '@fortawesome/free-solid-svg-icons';
 import * as S from './styled';
 
 interface IconProps {
@@ -15,10 +11,7 @@ interface IconProps {
   count?: number;
 }
 const Icon: React.FC<IconProps> = ({ name, match, onClick, count }) => {
-  let icon;
-  if (name === ROUTE_URL.FRIENDS) icon = match ? faUserLarge : faUserLarge;
-  else if (name === ROUTE_URL.CHAT) icon = match ? faMessage : faMessage;
-  else icon = match ? faPencil : faPencil;
+  const icon = match ? faPencil : faPencil;
 
   return (
     <S.Menu>
