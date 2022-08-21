@@ -5,6 +5,7 @@ let id = 0;
 interface ItemProps {
   id: number;
   text: string;
+  done: boolean;
 }
 export class TodoStore {
   private _todoList: ItemProps[] = [];
@@ -18,16 +19,16 @@ export class TodoStore {
   }
 
   addList(text: string): void {
-    const list = { id, text };
+    const list = { id, text, done: false };
     this._todoList[this._todoList.length] = list;
     id++;
   }
 
+  // updateList(id: number, flag: boolean): void {}
+
   deleteList(id: number): void {
-    const index = this._todoList.findIndex(elem => {
-      elem.id === id;
-    });
-    if (index > -1) this._todoList = this._todoList.splice(index, 1);
+    const idx = this._todoList.findIndex(elem => elem.id === id);
+    if (idx > -1) this._todoList.splice(idx, 1);
   }
 }
 

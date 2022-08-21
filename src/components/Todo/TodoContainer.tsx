@@ -9,14 +9,18 @@ export const TodoContainer: React.FC = observer(() => {
   const [text, setText] = useState<string>('');
 
   const handleChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>): void => {
-      setText(e.target.value);
+    (e: React.ChangeEvent<HTMLInputElement> | null): void => {
+      if (!e) setText('');
+      else setText(e.target.value);
     },
     [],
   );
-  const handleAdd = useCallback((text: string) => {
+  const handleAdd = useCallback((text: string): void => {
     if (!text) return;
     todoStore.addList(text);
+  }, []);
+  const handleDelete = useCallback((id: number): void => {
+    todoStore.deleteList(id);
   }, []);
 
   return (
@@ -24,7 +28,12 @@ export const TodoContainer: React.FC = observer(() => {
       <TodoView text={text} onChange={handleChange} onAdd={handleAdd} />
       <S.TodoList>
         {todoStore.todoList.map(elem => (
-          <ItemView key={elem.id} id={elem.id} text={elem.text} />
+          <ItemView
+            key={elem.id}
+            id={elem.id}
+            text={elem.text}
+            onDelete={handleDelete}
+          />
         ))}
       </S.TodoList>
     </S.Wrapper>

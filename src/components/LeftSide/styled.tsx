@@ -1,5 +1,5 @@
 import { CButton } from '@/utils';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Wrapper = styled.nav`
   display: flex;
@@ -33,6 +33,18 @@ export const IconButton = styled.button`
   }
 `;
 
+const badgeAnimation = keyframes`
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-5px) rotateY(360deg);
+  }
+  100% {
+    transform: none;
+  }
+`;
+
 export const Badge = styled.div`
   position: absolute;
   top: 6px;
@@ -40,10 +52,11 @@ export const Badge = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 12px;
-  height: 12px;
+  width: 15px;
+  height: 15px;
   background-color: red;
   color: white;
   font-size: 8px;
   border-radius: 50%;
+  animation: ${badgeAnimation} 2s ease-in-out;
 `;

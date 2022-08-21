@@ -38,6 +38,16 @@ export const Input = styled.input`
 export const TodoList = styled.ul``;
 
 export const TodoItem = styled.li`
+  display: flex;
+  align-items: center;
+  height: 25px;
   margin-top: 10px;
-  list-style: disc;
+`;
+
+export const ButtonWrapper = styled.div`
+  margin-left: auto;
+`;
+
+export const Button = styled.button<{ isFirst?: boolean }>`
+  margin-left: 5px;
 `;
