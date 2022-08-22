@@ -19,6 +19,10 @@ export const TodoContainer: React.FC = observer(() => {
     if (!text) return;
     todoStore.addList(text);
   }, []);
+
+  const handleUpdate = useCallback((id: number, flag: boolean): void => {
+    todoStore.updateList(id, flag);
+  }, []);
   const handleDelete = useCallback((id: number): void => {
     todoStore.deleteList(id);
   }, []);
@@ -32,6 +36,8 @@ export const TodoContainer: React.FC = observer(() => {
             key={elem.id}
             id={elem.id}
             text={elem.text}
+            done={elem.done}
+            onUpdate={handleUpdate}
             onDelete={handleDelete}
           />
         ))}

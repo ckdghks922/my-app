@@ -10,4 +10,8 @@ export const Wrapper = styled.div`
 export const MainSide = styled.div`
   width: calc(100% - 60px);
   height: 100%;
+
+  @media all and (max-width: 767px) {
+    width: 100%;
+  }
 `;

@@ -2,12 +2,10 @@ import { makeAutoObservable } from 'mobx';
 
 interface UserProps {
   name: string;
-  message: string;
 }
 export class ProfileStore {
   private _myProfile: UserProps = {
     name: '',
-    message: '',
   };
 
   constructor() {
@@ -18,9 +16,8 @@ export class ProfileStore {
     return this._myProfile;
   }
 
-  setMyProfile(name: string, message?: string) {
-    if (name) this._myProfile.name = name;
-    if (message) this._myProfile.message = message;
+  setMyProfile(name: string) {
+    this._myProfile.name = name;
   }
 }
 

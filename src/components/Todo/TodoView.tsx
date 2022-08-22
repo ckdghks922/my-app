@@ -28,14 +28,18 @@ export const TodoView: React.FC<ViewProps> = ({ text, onChange, onAdd }) => {
 interface ItemProps {
   id: number;
   text: string;
+  done: boolean;
+  onUpdate: (id: number, flag: boolean) => void;
   onDelete: (id: number) => void;
 }
-const Item: React.FC<ItemProps> = ({ id, text, onDelete }) => {
+const Item: React.FC<ItemProps> = ({ id, text, done, onUpdate, onDelete }) => {
   return (
     <S.TodoItem>
-      {text}
+      <S.TodoText done={done}>{text}</S.TodoText>
       <S.ButtonWrapper>
-        <S.Button isFirst>완료</S.Button>
+        <S.Button isFirst onClick={() => onUpdate(id, !done)}>
+          {done ? '해제' : '완료'}
+        </S.Button>
         <S.Button onClick={() => onDelete(id)}>삭제</S.Button>
       </S.ButtonWrapper>
     </S.TodoItem>

@@ -1,3 +1,4 @@
+import { CButton } from '@/utils';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -44,10 +45,21 @@ export const TodoItem = styled.li`
   margin-top: 10px;
 `;
 
+export const TodoText = styled.span<{ done: boolean }>`
+  max-width: calc(100% - 90px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-decoration: ${props => (props.done ? 'line-through' : 'none')};
+`;
+
 export const ButtonWrapper = styled.div`
+  display: flex;
   margin-left: auto;
 `;
 
 export const Button = styled.button<{ isFirst?: boolean }>`
-  margin-left: 5px;
+  ${CButton}
+  margin-left: 7px;
+  color: ${props => (props.isFirst ? 'black' : 'red')};
 `;

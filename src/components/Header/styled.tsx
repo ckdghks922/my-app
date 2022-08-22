@@ -19,8 +19,15 @@ export const Text = styled.span`
   margin-right: auto;
   font-weight: 500;
   font-size: 17px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 export const Time = styled.span`
   margin-left: auto;
+
+  @media all and (max-width: 767px) {
+    display: none;
+  }
 `;

@@ -24,7 +24,10 @@ export class TodoStore {
     id++;
   }
 
-  // updateList(id: number, flag: boolean): void {}
+  updateList(id: number, flag: boolean): void {
+    const idx = this._todoList.findIndex(elem => elem.id === id);
+    this._todoList[idx] = { ...this._todoList[idx], done: flag };
+  }
 
   deleteList(id: number): void {
     const idx = this._todoList.findIndex(elem => elem.id === id);
