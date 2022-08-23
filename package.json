@@ -16,6 +16,7 @@
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
     "@types/react-router-dom": "^5.3.3",
+    "gh-pages": "^4.0.0",
     "mobx": "^6.6.1",
     "mobx-react": "^7.5.2",
     "react": "^18.2.0",
@@ -28,9 +29,10 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "craco build"
   },
   "eslintConfig": {
     "extends": [
@@ -61,5 +63,6 @@
     "eslint-plugin-react": "^7.30.1",
     "husky": "^8.0.1",
     "prettier": "^2.7.1"
-  }
+  },
+  "homepage": "https://ckdghks922.github.io/my-app"
 }
