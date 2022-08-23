@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
+import { WidthView } from './CanvasView';
 import * as S from './styled';
 
 let isDrawing = false;
@@ -8,6 +9,28 @@ export const CanvasContainer: React.FC = () => {
   const [ctx, setCtx] = useState<CanvasRenderingContext2D | null | undefined>(
     undefined,
   );
+  const [width, setWidth] = useState<string>('1');
+
+  const handleDown = () => {
+    isDrawing = true;
+  };
+  const handleUp = () => {
+    isDrawing = false;
+    ctx?.beginPath();
+  };
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (canvas) {
+      canvas.width = 600;
+      canvas.height = 600;
+    }
+    const ctx = canvas?.getContext('2d');
+    setCtx(ctx);
+
+    document.addEventListener('mouseup', handleUp);
+    return () => document.removeEventListener('mouseup', handleUp);
+  }, []);
 
   const handleMove = (event: React.MouseEvent) => {
     const { offsetX, offsetY } = event.nativeEvent;
@@ -19,21 +42,9 @@ export const CanvasContainer: React.FC = () => {
     ctx?.moveTo(offsetX, offsetY);
   };
 
-  const handleDown = () => {
-    isDrawing = true;
-  };
-  const handleUp = () => {
-    isDrawing = false;
-  };
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (canvas) {
-      canvas.width = 600;
-      canvas.height = 600;
-    }
-    const ctx = canvas?.getContext('2d');
-    setCtx(ctx);
+  const handleChangeWidth = useCallback((value: string): void => {
+    setWidth(value);
+    if (ctx) ctx.lineWidth = Number(value);
   }, []);
 
   return (
@@ -42,8 +53,10 @@ export const CanvasContainer: React.FC = () => {
         ref={canvasRef}
         onMouseMove={handleMove}
         onMouseDown={handleDown}
-        onMouseUp={handleUp}
       />
+      <S.MenuWrapper>
+        <WidthView width={width} onChange={handleChangeWidth} />
+      </S.MenuWrapper>
     </S.Wrapper>
   );
 };

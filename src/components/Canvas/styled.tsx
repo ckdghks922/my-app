@@ -13,3 +13,9 @@ export const Canvas = styled.canvas`
   height: 600px;
   border: 1px solid black;
 `;
+
+export const MenuWrapper = styled.div`
+  margin-left: 50px;
+`;
+
+export const WidthInput = styled.input``;
