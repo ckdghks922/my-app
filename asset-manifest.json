@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/github.io/my-app/static/css/main.e0d9286a.css",
-    "main.js": "/github.io/my-app/static/js/main.f784ea9f.js",
-    "static/js/787.35cea4b2.chunk.js": "/github.io/my-app/static/js/787.35cea4b2.chunk.js",
-    "index.html": "/github.io/my-app/index.html",
-    "main.e0d9286a.css.map": "/github.io/my-app/static/css/main.e0d9286a.css.map",
-    "main.f784ea9f.js.map": "/github.io/my-app/static/js/main.f784ea9f.js.map",
-    "787.35cea4b2.chunk.js.map": "/github.io/my-app/static/js/787.35cea4b2.chunk.js.map"
+    "main.css": "/my-app/static/css/main.e0d9286a.css",
+    "main.js": "/my-app/static/js/main.cba3a7a9.js",
+    "static/js/787.35cea4b2.chunk.js": "/my-app/static/js/787.35cea4b2.chunk.js",
+    "index.html": "/my-app/index.html",
+    "main.e0d9286a.css.map": "/my-app/static/css/main.e0d9286a.css.map",
+    "main.cba3a7a9.js.map": "/my-app/static/js/main.cba3a7a9.js.map",
+    "787.35cea4b2.chunk.js.map": "/my-app/static/js/787.35cea4b2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e0d9286a.css",
-    "static/js/main.f784ea9f.js"
+    "static/js/main.cba3a7a9.js"
   ]
 }
