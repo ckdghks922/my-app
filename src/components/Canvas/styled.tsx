@@ -18,4 +18,4 @@ export const MenuWrapper = styled.div`
   margin-left: 50px;
 `;
 
-export const WidthInput = styled.input``;
+export const Input = styled.input``;

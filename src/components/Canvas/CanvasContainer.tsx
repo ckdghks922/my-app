@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { WidthView } from './CanvasView';
+import { WidthView, ColorView } from './CanvasView';
 import * as S from './styled';
 
 let isDrawing = false;
@@ -9,14 +9,20 @@ export const CanvasContainer: React.FC = () => {
   const [ctx, setCtx] = useState<CanvasRenderingContext2D | null | undefined>(
     undefined,
   );
-  const [width, setWidth] = useState<string>('1');
+  const [width, setWidth] = useState<number>(1);
+  const [color, setColor] = useState<string>('');
 
   const handleDown = () => {
+    if (ctx) {
+      ctx.beginPath();
+      ctx.lineWidth = width;
+      ctx.strokeStyle = color;
+      ctx.fillStyle = color;
+    }
     isDrawing = true;
   };
   const handleUp = () => {
     isDrawing = false;
-    ctx?.beginPath();
   };
 
   useEffect(() => {
@@ -42,9 +48,11 @@ export const CanvasContainer: React.FC = () => {
     ctx?.moveTo(offsetX, offsetY);
   };
 
-  const handleChangeWidth = useCallback((value: string): void => {
+  const handleChangeWidth = useCallback((value: number): void => {
     setWidth(value);
-    if (ctx) ctx.lineWidth = Number(value);
+  }, []);
+  const handleChangeColor = useCallback((value: string): void => {
+    setColor(value);
   }, []);
 
   return (
@@ -56,6 +64,7 @@ export const CanvasContainer: React.FC = () => {
       />
       <S.MenuWrapper>
         <WidthView width={width} onChange={handleChangeWidth} />
+        <ColorView onChange={handleChangeColor} />
       </S.MenuWrapper>
     </S.Wrapper>
   );
