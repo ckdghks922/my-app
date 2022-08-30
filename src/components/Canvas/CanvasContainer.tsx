@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { WidthView, ColorView } from './CanvasView';
+import { WidthView, ColorView, RemoveView, RemoveAllView } from './CanvasView';
 import * as S from './styled';
 
+const CANVAS_SIZE = 600;
 let isDrawing = false;
 
 export const CanvasContainer: React.FC = () => {
@@ -28,8 +29,8 @@ export const CanvasContainer: React.FC = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (canvas) {
-      canvas.width = 600;
-      canvas.height = 600;
+      canvas.width = CANVAS_SIZE;
+      canvas.height = CANVAS_SIZE;
     }
     const ctx = canvas?.getContext('2d');
     setCtx(ctx);
@@ -54,6 +55,15 @@ export const CanvasContainer: React.FC = () => {
   const handleChangeColor = useCallback((value: string): void => {
     setColor(value);
   }, []);
+  const handleChangeMode = useCallback(() => {
+    setColor('white');
+  }, []);
+  const handleClear = useCallback(() => {
+    if (ctx) {
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+    }
+  }, [ctx]);
 
   return (
     <S.Wrapper>
@@ -65,6 +75,8 @@ export const CanvasContainer: React.FC = () => {
       <S.MenuWrapper>
         <WidthView width={width} onChange={handleChangeWidth} />
         <ColorView onChange={handleChangeColor} />
+        <RemoveView onClick={handleChangeMode} />
+        <RemoveAllView onClick={handleClear} />
       </S.MenuWrapper>
     </S.Wrapper>
   );

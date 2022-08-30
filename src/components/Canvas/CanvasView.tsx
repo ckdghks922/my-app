@@ -24,3 +24,21 @@ export const ColorView: React.FC<ColorProps> = ({ onChange }) => {
     <S.Input type="color" onChange={event => onChange(event.target.value)} />
   );
 };
+
+interface RemoveModeProps extends RemoveProps {
+  isErase?: boolean;
+}
+export const RemoveView: React.FC<RemoveModeProps> = ({ onClick, isErase }) => {
+  return (
+    <S.Button onClick={onClick}>
+      {isErase ? '지우개 모드' : '그리기 모드 '}
+    </S.Button>
+  );
+};
+
+interface RemoveProps {
+  onClick: () => void;
+}
+export const RemoveAllView: React.FC<RemoveProps> = ({ onClick }) => {
+  return <S.Button onClick={onClick}>모두 지우기</S.Button>;
+};

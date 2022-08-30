@@ -1,3 +1,4 @@
+import { CButton } from '@/utils';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -15,7 +16,19 @@ export const Canvas = styled.canvas`
 `;
 
 export const MenuWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   margin-left: 50px;
 `;
 
-export const Input = styled.input``;
+export const Input = styled.input`
+  width: 120px;
+  margin-top: 15px;
+`;
+
+export const Button = styled.button`
+  ${CButton}
+  height: 30px;
+  margin-top: 15px;
+  border: 1px solid black;
+`;
