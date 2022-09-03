@@ -11,7 +11,9 @@ export const CanvasContainer: React.FC = () => {
     undefined,
   );
   const [width, setWidth] = useState<number>(1);
-  const [color, setColor] = useState<string>('');
+  const [color, setColor] = useState<string>('#000000');
+  // 지우개 모드에서 돌아올때 이전 색 지정
+  const [prevColor, setPrevColor] = useState<string>('#000000');
 
   const handleDown = () => {
     if (ctx) {
@@ -54,10 +56,12 @@ export const CanvasContainer: React.FC = () => {
   }, []);
   const handleChangeColor = useCallback((value: string): void => {
     setColor(value);
+    setPrevColor(value);
   }, []);
   const handleChangeMode = useCallback(() => {
-    setColor('white');
-  }, []);
+    if (color !== 'white') setColor('white');
+    else setColor(prevColor);
+  }, [color, prevColor]);
   const handleClear = useCallback(() => {
     if (ctx) {
       ctx.fillStyle = 'white';
@@ -75,7 +79,7 @@ export const CanvasContainer: React.FC = () => {
       <S.MenuWrapper>
         <WidthView width={width} onChange={handleChangeWidth} />
         <ColorView onChange={handleChangeColor} />
-        <RemoveView onClick={handleChangeMode} />
+        <RemoveView onClick={handleChangeMode} isErase={color === 'white'} />
         <RemoveAllView onClick={handleClear} />
       </S.MenuWrapper>
     </S.Wrapper>

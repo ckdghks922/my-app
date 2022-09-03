@@ -26,7 +26,7 @@ export const SubText = styled.span`
   font-weight: 500;
 `;
 
-export const Input = styled.input`
+export const Input = styled.input.attrs({ required: true })`
   margin-top: 30px;
   width: 300px;
   height: 30px;
