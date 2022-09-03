@@ -61,7 +61,7 @@ export const CanvasContainer: React.FC = () => {
   const handleChangeMode = useCallback(() => {
     if (color !== 'white') setColor('white');
     else setColor(prevColor);
-  }, [color, prevColor]);
+  }, [color]);
   const handleClear = useCallback(() => {
     if (ctx) {
       ctx.fillStyle = 'white';
