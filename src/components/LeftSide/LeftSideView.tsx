@@ -4,10 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faRectangleList as activeList,
   faPenToSquare as activePen,
+  faMoneyBillAlt as activeMoney,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faRectangleList as normalList,
   faPenToSquare as normalPen,
+  faMoneyBillAlt as normalMoney,
 } from '@fortawesome/free-regular-svg-icons';
 import * as S from './styled';
 
@@ -19,8 +21,21 @@ interface IconProps {
 }
 const Icon: React.FC<IconProps> = ({ name, match, onClick, count }) => {
   let icon;
-  if (name === ROUTE_URL.TODO) icon = match ? activeList : normalList;
-  else icon = match ? activePen : normalPen;
+
+  switch (name) {
+    case ROUTE_URL.TODO: {
+      icon = match ? activeList : normalList;
+      break;
+    }
+    case ROUTE_URL.DRAWING: {
+      icon = match ? activePen : normalPen;
+      break;
+    }
+    default: {
+      icon = match ? activeMoney : normalMoney;
+      break;
+    }
+  }
 
   return (
     <S.MenuList>

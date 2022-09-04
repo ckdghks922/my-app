@@ -16,7 +16,8 @@ export const LeftSideContainer: React.FC = observer(() => {
 
   const NAV_LIST = [
     { name: ROUTE_URL.TODO, count: todoStore.todoList.length },
-    { name: ROUTE_URL.DRAWING, count: 0 },
+    { name: ROUTE_URL.DRAWING },
+    { name: ROUTE_URL.COIN },
   ];
 
   return (

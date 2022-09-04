@@ -17,7 +17,7 @@ export const Wrapper = styled.nav`
 export const Menu = styled.ul``;
 
 export const MenuList = styled.li`
-  margin-top: 15px;
+  margin-top: 12px;
 `;
 
 export const IconButton = styled.button`
