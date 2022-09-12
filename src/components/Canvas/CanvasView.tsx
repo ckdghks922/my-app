@@ -32,7 +32,6 @@ interface RemoveModeProps extends RemoveProps {
   isErase: boolean;
 }
 const Remove: React.FC<RemoveModeProps> = ({ onClick, isErase }) => {
-  console.log(isErase);
   return (
     <S.Button onClick={onClick}>
       {isErase ? '지우개 모드' : '그리기 모드 '}

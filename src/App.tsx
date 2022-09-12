@@ -1,4 +1,5 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { MyStoreProvider } from '@/stores';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { lightTheme } from '@/theme';
@@ -7,18 +8,22 @@ import * as Page from '@/pages';
 import * as Compt from '@/components';
 
 export const App: React.FC = () => {
+  const queryClient = new QueryClient();
+
   return (
-    <ThemeProvider theme={lightTheme}>
-      <GlobalStyle />
-      <MyStoreProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path={PAGE_URL.WELCOME} element={<Compt.Login />} />
-            <Route path="*" element={<Page.Main />} />
-          </Routes>
-        </BrowserRouter>
-      </MyStoreProvider>
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={lightTheme}>
+        <GlobalStyle />
+        <MyStoreProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path={PAGE_URL.WELCOME} element={<Compt.Login />} />
+              <Route path="*" element={<Page.Main />} />
+            </Routes>
+          </BrowserRouter>
+        </MyStoreProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 };
 
@@ -30,6 +35,10 @@ const GlobalStyle = createGlobalStyle`
   body {
     width: 100%;
     height: 100%;
+  }
+
+  #root {
+    overflow: hidden;
   }
 
   body {

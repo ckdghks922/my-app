@@ -13,10 +13,19 @@ export const CoinWrapper = styled.div`
   align-items: center;
   background-color: gray;
   height: 50px;
-  margin-top: 15px;
+  margin: 10px 0;
 
   & > a {
     font-size: 20px;
     padding: 15px;
   }
+
+  & > img {
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
 `;
+
+export const CoinImg = styled.img``;
