@@ -29,3 +29,16 @@ export const CoinWrapper = styled.div`
 `;
 
 export const CoinImg = styled.img``;
+
+export const CoinItemWrapper = styled.div``;
+
+export const CoinName = styled.h1`
+  margin-top: 10px;
+  font-size: 30px;
+`;
+
+export const CoinDesc = styled.p`
+  margin-top: 10px;
+  font-size: 20px;
+  line-height: 25px;
+`;

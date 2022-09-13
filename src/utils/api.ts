@@ -1,3 +1,17 @@
+const BASE_URL = 'https://api.coinpaprika.com/v1';
+
 export const fetchCoins = () => {
-  return fetch('https://api.coinpaprika.com/v1/coins').then(res => res.json());
+  return fetch(`${BASE_URL}/coins`).then(res => res.json());
+};
+
+export const fetchCoin = (id: string | undefined) => {
+  return fetch(`${BASE_URL}/coins/${id?.toLowerCase()}`).then(res =>
+    res.json(),
+  );
+};
+
+export const fetchCoinTicker = (id: string | undefined) => {
+  return fetch(`${BASE_URL}/tickers/${id?.toLowerCase()}`).then(res =>
+    res.json(),
+  );
 };
