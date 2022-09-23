@@ -3,21 +3,38 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
   max-width: 350px;
-  margin: 0 auto;
+  margin: 10px auto;
+`;
+
+export const LoadingWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`;
+
+export const Title = styled.header`
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin: 15px 0;
 `;
 
 export const CoinWrapper = styled.div`
   display: flex;
   align-items: center;
-  background-color: gray;
+  background-color: aliceblue;
   height: 50px;
   margin: 10px 0;
 
   & > a {
     font-size: 20px;
     padding: 15px;
+
+    &:hover {
+      font-weight: 600;
+    }
   }
 
   & > img {

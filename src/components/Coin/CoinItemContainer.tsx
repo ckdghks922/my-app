@@ -10,12 +10,13 @@ export const CoinItemContainer: React.FC = () => {
     ['info', coinId],
     () => fetchCoin(coinId),
   );
-  const { isLoading: isTickersLoading, data: tickersInfo } = useQuery(
+  const { isLoading: isTickerLoading, data: tickerInfo } = useQuery(
     ['tickers', coinId],
     () => fetchCoinTicker(coinId),
   );
 
-  if (isInfoLoading || isTickersLoading) return <div>Loading...</div>;
+  if (isInfoLoading || isTickerLoading)
+    return <S.LoadingWrapper>Loading...</S.LoadingWrapper>;
 
   return (
     <S.Wrapper>

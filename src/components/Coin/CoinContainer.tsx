@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import { CoinItemView } from './CoinView';
+import { CoinTitle, CoinItemView } from './CoinView';
 import { fetchCoins } from '@/utils';
 import * as S from './styled';
 
@@ -15,11 +15,12 @@ interface CoinInterface {
 export const CoinContainer: React.FC = () => {
   const { isLoading, data } = useQuery<CoinInterface[]>('allCoins', fetchCoins);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <S.LoadingWrapper>Loading...</S.LoadingWrapper>;
 
   return (
     <S.Wrapper>
-      {data?.slice(0, 50).map(elem => (
+      <CoinTitle />
+      {data?.slice(0, 20).map(elem => (
         <CoinItemView key={elem.id} id={elem.id} symbol={elem.symbol} />
       ))}
     </S.Wrapper>

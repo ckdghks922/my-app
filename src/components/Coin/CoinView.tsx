@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 import * as S from './styled';
 
+export const CoinTitle: React.FC = () => {
+  return <S.Title>Top 20 코인 목록</S.Title>;
+};
+
 interface CoinItemProps {
   id: string;
   symbol: string;

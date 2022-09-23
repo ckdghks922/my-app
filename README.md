@@ -1,6 +1,6 @@
 이 프로젝트는 React, Typescript 기반 개인 연습 프로젝트입니다.
 
-https://ckdghks922.github.io/my-app
+<!-- https://ckdghks922.github.io/my-app -->
 
 현재 진행 완료/진행 중인 컴포넌트는 다음과 같습니다.
 
