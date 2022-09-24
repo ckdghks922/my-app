@@ -52,10 +52,12 @@ export const CoinItemWrapper = styled.div``;
 export const CoinName = styled.h1`
   margin-top: 10px;
   font-size: 30px;
+  text-align: center;
 `;
 
 export const CoinDesc = styled.p`
   margin-top: 10px;
   font-size: 20px;
-  line-height: 25px;
+  line-height: 30px;
+  text-align: center;
 `;

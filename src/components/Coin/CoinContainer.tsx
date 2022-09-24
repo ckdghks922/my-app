@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import { CoinTitle, CoinItemView } from './CoinView';
+import { CoinTitleView, CoinItemView } from './CoinView';
 import { fetchCoins } from '@/utils';
 import * as S from './styled';
 
@@ -19,7 +19,7 @@ export const CoinContainer: React.FC = () => {
 
   return (
     <S.Wrapper>
-      <CoinTitle />
+      <CoinTitleView />
       {data?.slice(0, 20).map(elem => (
         <CoinItemView key={elem.id} id={elem.id} symbol={elem.symbol} />
       ))}
