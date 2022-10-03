@@ -18,7 +18,7 @@ export const CoinItemContainer: React.FC = () => {
   return (
     <S.Wrapper>
       <ItemDescView name={coinInfo.name} description={coinInfo.description} />
-      <Chart coinId={coinId} />
+      <Chart coinId={coinId as string} />
     </S.Wrapper>
   );
 };

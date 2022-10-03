@@ -57,7 +57,7 @@ export const CoinName = styled.h1`
 `;
 
 export const CoinDesc = styled.p`
-  margin-top: 10px;
+  margin: 15px 0;
   font-size: 16px;
   line-height: 25px;
   text-align: center;
