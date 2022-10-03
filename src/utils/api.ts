@@ -9,9 +9,3 @@ export const fetchCoin = (id: string | undefined) => {
     res.json(),
   );
 };
-
-export const fetchCoinTicker = (id: string | undefined) => {
-  return fetch(`${BASE_URL}/tickers/${id?.toLowerCase()}`).then(res =>
-    res.json(),
-  );
-};

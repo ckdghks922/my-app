@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import * as S from './styled';
 
 export const CoinTitleView: React.FC = () => {
-  return <S.Title>Top 20 코인 목록</S.Title>;
+  return <S.Title>Top 20 Coin List</S.Title>;
 };
 
 interface CoinItemProps {

@@ -29,6 +29,7 @@ export const CoinWrapper = styled.div`
   margin: 10px 0;
 
   & > a {
+    font-style: italic;
     font-size: 20px;
     padding: 15px;
 
@@ -57,7 +58,7 @@ export const CoinName = styled.h1`
 
 export const CoinDesc = styled.p`
   margin-top: 10px;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 16px;
+  line-height: 25px;
   text-align: center;
 `;

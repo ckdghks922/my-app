@@ -20,7 +20,7 @@ export const CoinContainer: React.FC = () => {
   return (
     <S.Wrapper>
       <CoinTitleView />
-      {data?.slice(0, 20).map(elem => (
+      {data?.slice(0, 20).map((elem: CoinInterface) => (
         <CoinItemView key={elem.id} id={elem.id} symbol={elem.symbol} />
       ))}
     </S.Wrapper>
