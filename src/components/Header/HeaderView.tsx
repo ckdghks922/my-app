@@ -11,6 +11,7 @@ export const HeaderTextView = memo(HeaderText);
 
 interface TimeProps {
   time: {
+    isAM: boolean;
     hours: string;
     minutes: string;
     seconds: string;
@@ -19,7 +20,7 @@ interface TimeProps {
 export const TimeTextView: React.FC<TimeProps> = ({ time }) => {
   return (
     <S.Time>
-      현재 시각: {time.hours}:{time.minutes}:{time.seconds}
+      {time.isAM ? '오전' : '오후'} {time.hours}:{time.minutes}:{time.seconds}
     </S.Time>
   );
 };

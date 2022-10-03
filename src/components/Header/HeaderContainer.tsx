@@ -10,11 +10,17 @@ export const HeaderContainer: React.FC = () => {
 
   const handleTimer = useCallback(() => {
     const date = new Date();
-    const hours = date.getHours().toString().padStart(2, '0');
+    const hour = date.getHours();
+
+    const isAM = hour < 12;
+    const hours =
+      hour < 13
+        ? hour.toString().padStart(2, '0')
+        : (hour - 12).toString().padStart(2, '0');
     const minutes = date.getMinutes().toString().padStart(2, '0');
     const seconds = date.getSeconds().toString().padStart(2, '0');
 
-    return { hours, minutes, seconds };
+    return { isAM, hours, minutes, seconds };
   }, []);
 
   const [time, setTime] = useState(handleTimer());
