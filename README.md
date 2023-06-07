@@ -1,9 +1,14 @@
-이 프로젝트는 React, Typescript 기반 개인 연습 프로젝트입니다.
+이 저장소는 React, Typescript 기반 프로젝트입니다.
 
-<!-- https://ckdghks922.github.io/my-app -->
+## 대표 사용 라이브러리
 
-현재 진행 완료/진행 중인 컴포넌트는 다음과 같습니다.
+1. mobx (상태 관리)
+2. react-query (데이터 통신)
+3. react-apexcharts (차트 표시)
+4. styled-component (css-in-js)
 
-1. 할 일 리스트(To-do List)
-2. 그림판(Canvas)
-3. 암호화폐 정보 표시(Coin Info)
+## 구현 기능
+
+1. 할 일 리스트
+2. 암호화폐 정보 표시
+3. TBD
